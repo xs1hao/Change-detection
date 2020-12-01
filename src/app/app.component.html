@@ -1,0 +1,35 @@
+<p>
+	<a
+		href="https://danielwiehl.github.io/edu-angular-change-detection/"
+		target="_blank"
+		>手动控制变更检测</a
+	>
+	<br />
+	<a href="https://zhuanlan.zhihu.com/p/110118375" target="_blank"
+		>变更检测---知乎</a
+	>
+	<br />
+	<a
+		href="https://www.jianshu.com/p/d8ebb6daf993?utm_campaign=haruki"
+		target="_blank"
+		>变更检测--简书</a
+	>
+</p>
+<h4>“手动”触发变更检测</h4>
+<p>
+	通过Onpush策略组织了自动检测的执行，那在需要时候怎么“手动”触发组件的变更检测呢？
+	<br>其实在设置了OnPush策略以后，还是有许多方法可以触发变更检测的；
+	<br>1）组件的@Input属性的引用发生变化。
+	<br>2）组件内的DOM事件，包括它子组件的DOM事件，比如click、submit、mouse down。
+	<br>3）组件内的Observable订阅事件，同时设置Async pipe。
+	<br>4）组件内手动使用ChangeDetectorRef.detectChanges()、ChangeDetectorRef.markForCheck()、ApplicationRef.tick()方法
+</p>
+<p>
+    <strong>ChangeDetectorRef</strong>
+    <br> <strong>markForCheck()：</strong>使用于子组件，将该子组件到根组件之间的路径标记起来，通知angular检测器下次变化检测时一定检查此路径上的组件;
+    <br> <strong>detach()：</strong>将组件的检测器从检测器数中脱离，不再受检测机制的控制，除非重新attach上;
+    <br> <strong>reattach()：</strong>把脱离的检测器重新链接到检测器树上;
+    <br> <strong>detectChanges():</strong>手动发起该组件到各个子组件的变更检测;
+</p>
+<h6>--------------------------------------------------------------------------------------------------</h6>
+<app-parent name="{{ name }}"></app-parent>
