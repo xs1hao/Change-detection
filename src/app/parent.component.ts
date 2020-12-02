@@ -22,6 +22,7 @@ import {
             </span>    
         </h3>
         <app-child [name]="title"></app-child>
+        <app-animate></app-animate>
         <!-- <app-child></app-child> -->
     `
 })
