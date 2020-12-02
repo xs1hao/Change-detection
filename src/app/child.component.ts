@@ -54,6 +54,7 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck, AfterContentI
 
         this.cdr.detach();
 
+        console.log('performance.now():',performance.now());
         // setTimeout(() => {
         //   this.count = 10;
         //   this.cdr.detectChanges(); // 手动发起该组件到各个子组件的变更检测;
