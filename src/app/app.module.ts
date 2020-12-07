@@ -8,6 +8,7 @@ import { ParentComponent } from './pages/parent/parent.component';
 import { ChildComponent } from './pages/parent/child/child.component';
 import { SiblingComponent } from './pages/parent/sibling/sibling.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UnderchildComponent } from './pages/parent/child/underchild/underchild.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
         ParentComponent,
         ChildComponent,
         AnimationComponent,
-        SiblingComponent
+        SiblingComponent,
+        UnderchildComponent
     ],
     bootstrap: [AppComponent]
 })

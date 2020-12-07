@@ -8,5 +8,6 @@
     <span>Today: {{ getDate() | date }}</span> &nbsp;&nbsp;
     <span>Count: {{ count }}</span>&nbsp;&nbsp;
     <span>num: {{ num$ | async }}</span>
+    <app-underchild [data]="inChildComUsers"></app-underchild>
     
 </div>

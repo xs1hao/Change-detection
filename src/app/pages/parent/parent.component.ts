@@ -10,7 +10,7 @@ export class ParentComponent implements OnInit {
 
     @Input() name = 'angular parent';
     title = 'hello child';
-
+    userGroup: any
     constructor(
         public cdr: ChangeDetectorRef,
         public commonService: CommonServiceService,
@@ -23,8 +23,10 @@ export class ParentComponent implements OnInit {
 
     getMockData() {
         this.commonService.requestUsers().subscribe(res => {
-            console.log('in parentComponent ~',res.slice(0,5));
-            
+            if (Array.isArray(res)) {
+                this.userGroup = res.slice(0,5);
+            }
+            this.commonService.uerSubject$.next(res);
         })
     }
 

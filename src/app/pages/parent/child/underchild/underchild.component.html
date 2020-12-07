@@ -1,0 +1,13 @@
+<div class="underchild">
+    我点击的那个： {{currentUser?.url}}
+    <ul>
+        <ng-container *ngFor="let item of data">
+            <li (click)="underCHind(item)">
+                {{item.url}}
+                <div class="login" *ngIf="!item.showLogin">
+                    {{item.login}}
+                </div>
+            </li>
+        </ng-container>
+    </ul>
+</div>

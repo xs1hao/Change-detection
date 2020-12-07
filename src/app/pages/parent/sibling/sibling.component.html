@@ -2,4 +2,12 @@
     <p>
         app-sibling works~
     </p>
+    被点的那个： {{currentUser?.login}}
+    <ul>
+        <ng-container *ngFor="let item of userGroup">
+            <li (click)="sibling(item)">
+                {{item.login}}
+            </li>
+        </ng-container>
+    </ul>
 </div>

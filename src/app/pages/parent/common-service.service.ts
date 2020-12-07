@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
@@ -7,6 +8,8 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class CommonServiceService {
 
+    uerSubject$ = new BehaviorSubject(null);
+    
     constructor(
         private http: HttpClient,
 
