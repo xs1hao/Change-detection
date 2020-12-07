@@ -1,0 +1,12 @@
+<div class="child">
+    <p>
+        在组件中关闭变更检测，只有值发生变化之后，在onchange()
+        方法中在执行子组件的变更检测。
+    </p>
+    <h4 (click)="counter()" title="click addCount">Child: {{ name }}</h4>
+    <h5>Title: {{ name + ' 555' }}</h5>
+    <span>Today: {{ getDate() | date }}</span> &nbsp;&nbsp;
+    <span>Count: {{ count }}</span>&nbsp;&nbsp;
+    <span>num: {{ num$ | async }}</span>
+    
+</div>

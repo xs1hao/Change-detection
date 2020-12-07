@@ -9,6 +9,6 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule,{
-    // ngZone: 'noop' // 禁用zone 事件不在触发；DOM 的更新依赖于 tick() 的触发，zone.js 帮助开发者省去了手动触发的操作。
+    // ngZone: 'noop' // 禁用zone.js 事件不在触发；DOM 的更新依赖于 tick() 的触发，zone.js 帮助开发者省去了手动触发的操作。
 })
   .catch(err => console.error(err));

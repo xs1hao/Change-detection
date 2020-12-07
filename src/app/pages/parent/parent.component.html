@@ -1,0 +1,14 @@
+<div class="parent">
+    <button (click)="modTitle()" title="click modify title">
+        Parent: {{ name }}
+    </button>
+    <h3>
+        Title:
+        <span style="color: #23c6c7">
+            {{ title }}
+        </span>
+    </h3>
+    <app-child [name]="title"></app-child>
+    <!-- <app-animate></app-animate> -->
+    <app-sibling></app-sibling>
+</div>

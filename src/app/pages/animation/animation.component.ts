@@ -6,13 +6,13 @@ import {
 
 @Component({
     selector: 'app-animate',
-    template: `<div id="e"></div>`,
-    styleUrls: ['./animate.component.css']
+    templateUrl: './animation.component.html',
+    styleUrls: ['./animation.component.css']
 })
-export class AnimateComponent implements OnInit {
+export class AnimationComponent implements OnInit {
     e;
     flag = true;
-    left = 0;
+    right = 0;
     constructor() { }
 
     ngOnInit(): void {
@@ -25,19 +25,19 @@ export class AnimateComponent implements OnInit {
 
     render = () => {
         if (this.flag == true) {
-            if (this.left >= 100) {
+            if (this.right >= 100) {
                 this.flag = false
             }
-            this.e.style.left = ` ${this.left++}px`
+            this.e.style.right = ` ${this.right++}px`
         } else {
-            if (this.left <= 0) {
+            if (this.right <= 0) {
                 this.flag = true
             }
-            this.e.style.left = ` ${this.left--}px`
+            this.e.style.right = ` ${this.right--}px`
         }
     }
 
-    //requestAnimationFrame效果
+    // requestAnimationFrame效果
     animloop = () => {
         this.render();
         window.requestAnimationFrame(this.animloop);

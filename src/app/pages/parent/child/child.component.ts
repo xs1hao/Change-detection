@@ -1,35 +1,15 @@
-import {
-    AfterContentInit,
-    AfterViewInit,
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-    Component,
-    DoCheck,
-    Input,
-    OnChanges,
-    OnInit,
-    ApplicationRef,
-    SimpleChanges
-} from '@angular/core';
-import { ParentComponent } from './parent.component';
-import { interval, Observable } from 'rxjs';
-import { throttleTime, map, scan } from 'rxjs/operators';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ParentComponent } from '../parent.component';
 
 @Component({
-    selector: 'app-child',
-    template: `
-        <p>
-            在组件中关闭变更检测，只有值发生变化之后，在onchange() 方法中在执行子组件的变更检测。
-        </p>
-        <h1 (click)="counter()" title="click addCount">Child: {{name}}</h1>
-        <h5>Title: {{name + ' 555'}}</h5>
-        <p>Today: {{getDate() | date}}</p>
-        <p>Count: {{count}}</p>
-        <p>num: {{num$ | async}}</p>
-    `,
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChildComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterViewInit {
+export class ChildComponent implements OnInit {
+
     @Input() name = '';
     count = 0;
     num$: Observable<number>;
@@ -96,4 +76,5 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck, AfterContentI
     counter() {
         this.count++;
     }
+
 }
